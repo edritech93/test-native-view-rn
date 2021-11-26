@@ -14,6 +14,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		86FCE764B2558B94BAE15D15 /* libPods-testNativeView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 506085F357C9517C6ADE4AFC /* libPods-testNativeView.a */; };
 		BA63487F791D3F3EE83EEBD8 /* libPods-testNativeView-testNativeViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C944015A5AED0B67D062CBE0 /* libPods-testNativeView-testNativeViewTests.a */; };
+		D4A616BC27509255005449FA /* MyCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A616BB27509255005449FA /* MyCustomView.swift */; };
+		D4A616BE275092F5005449FA /* MyCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A616BD275092F5005449FA /* MyCustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,9 @@
 		ABEB550E53F72A7DFDF06828 /* Pods-testNativeView-testNativeViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testNativeView-testNativeViewTests.debug.xcconfig"; path = "Target Support Files/Pods-testNativeView-testNativeViewTests/Pods-testNativeView-testNativeViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0A1D28E539079F4092E3C1E /* Pods-testNativeView-testNativeViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testNativeView-testNativeViewTests.release.xcconfig"; path = "Target Support Files/Pods-testNativeView-testNativeViewTests/Pods-testNativeView-testNativeViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		C944015A5AED0B67D062CBE0 /* libPods-testNativeView-testNativeViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testNativeView-testNativeViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4A616BA27509255005449FA /* testNativeView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testNativeView-Bridging-Header.h"; sourceTree = "<group>"; };
+		D4A616BB27509255005449FA /* MyCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomView.swift; sourceTree = "<group>"; };
+		D4A616BD275092F5005449FA /* MyCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCustomView.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -86,6 +91,7 @@
 		13B07FAE1A68108700A75B9A /* testNativeView */ = {
 			isa = PBXGroup;
 			children = (
+				D4A616B927509228005449FA /* library */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -145,8 +151,17 @@
 				ABEB550E53F72A7DFDF06828 /* Pods-testNativeView-testNativeViewTests.debug.xcconfig */,
 				B0A1D28E539079F4092E3C1E /* Pods-testNativeView-testNativeViewTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D4A616B927509228005449FA /* library */ = {
+			isa = PBXGroup;
+			children = (
+				D4A616BB27509255005449FA /* MyCustomView.swift */,
+				D4A616BA27509255005449FA /* testNativeView-Bridging-Header.h */,
+				D4A616BD275092F5005449FA /* MyCustomView.m */,
+			);
+			path = library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +223,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1310;
 					};
 				};
 			};
@@ -412,6 +427,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				D4A616BE275092F5005449FA /* MyCustomView.m in Sources */,
+				D4A616BC27509255005449FA /* MyCustomView.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABEB550E53F72A7DFDF06828 /* Pods-testNativeView-testNativeViewTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0A1D28E539079F4092E3C1E /* Pods-testNativeView-testNativeViewTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = testNativeViewTests/Info.plist;
@@ -498,6 +517,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = testNativeView;
+				SWIFT_OBJC_BRIDGING_HEADER = "library/testNativeView-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = testNativeView;
+				SWIFT_OBJC_BRIDGING_HEADER = "library/testNativeView-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
